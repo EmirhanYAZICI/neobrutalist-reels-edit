@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import {C, FONT_MONO} from '../theme';
+import {C, CHROME, FONT_MONO} from '../theme';
 
 const L = 24;      // left rail
 const R = 1056;    // right rail
@@ -17,7 +17,7 @@ const Tick: React.FC<{x: number; y: number; dx: number; dy: number}> = ({x, y, d
         top: y,
         width: TICK,
         height: 3,
-        backgroundColor: 'rgba(255,255,255,0.78)',
+        backgroundColor: CHROME,
       }}
     />
     <div
@@ -27,7 +27,7 @@ const Tick: React.FC<{x: number; y: number; dx: number; dy: number}> = ({x, y, d
         top: Math.min(y, y + dy * TICK),
         width: 3,
         height: TICK,
-        backgroundColor: 'rgba(255,255,255,0.78)',
+        backgroundColor: CHROME,
       }}
     />
   </>
@@ -47,7 +47,8 @@ export const Chrome: React.FC = () => {
     left: L,
     width: R - L,
     height: 2,
-    backgroundColor: 'rgba(255,255,255,0.22)',
+    backgroundColor: CHROME,
+    opacity: 0.3,
   };
 
   return (
@@ -68,7 +69,7 @@ export const Chrome: React.FC = () => {
           fontFamily: FONT_MONO,
           fontSize: 24,
           letterSpacing: 4,
-          color: 'rgba(255,255,255,0.8)',
+          color: CHROME,
         }}
       >
         SKYDAGGER × EJDERHA
@@ -85,7 +86,7 @@ export const Chrome: React.FC = () => {
           fontFamily: FONT_MONO,
           fontSize: 24,
           letterSpacing: 3,
-          color: 'rgba(255,255,255,0.8)',
+          color: CHROME,
         }}
       >
         <span style={{color: C.red, opacity: rec ? 1 : 0.25, fontSize: 20}}>●</span>
@@ -100,7 +101,8 @@ export const Chrome: React.FC = () => {
           fontFamily: FONT_MONO,
           fontSize: 20,
           letterSpacing: 5,
-          color: 'rgba(255,255,255,0.45)',
+          color: CHROME,
+          opacity: 0.6,
         }}
       >
         TR // SAVUNMA SANAYİİ

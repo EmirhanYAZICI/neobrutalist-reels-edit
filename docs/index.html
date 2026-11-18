@@ -43,6 +43,12 @@
   h2.sec{text-transform:uppercase;margin-top:30px;font-size:28px}
   footer{font-family:Consolas,"Courier New",monospace;font-size:13px;color:#8d8d8d;padding:28px 0 50px;font-weight:400}
   .rule{height:6px;background:#000;border-top:3px solid #333;margin:26px 0}
+  .themes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:18px 0}
+  .theme{background:var(--concrete);color:#000;border:6px solid #000;box-shadow:10px 10px 0 #000;padding:12px}
+  .theme h3{margin:8px 0 4px;font-size:18px;text-transform:uppercase}
+  .theme p{margin:0;font-family:Consolas,"Courier New",monospace;font-size:13px;font-weight:400}
+  .sw{display:flex;height:34px;border:3px solid #000}
+  .sw span{flex:1}
   img{max-width:100%;border:6px solid #000;box-shadow:10px 10px 0 #000;display:block}
 </style>
 </head>
@@ -89,6 +95,55 @@
     tactical target boxes &middot; HUD visor frames &middot; EMP shock rings &middot; drone clone swarms &middot;
     hyperframe collages &middot; impact frames &middot; glitch slices &middot; scrolling warning bands &middot;
     broadcast chrome with running timecode.</p>
+  </div>
+
+  <h2 class="sec">Eight themes, one line</h2>
+  <div class="card">
+    <p>Every component reads seven theme slots instead of hardcoded colours, so a scene
+    written for one theme renders in all of them. Switch the look in <code>src/config.ts</code>:</p>
+  </div>
+<pre>export const ACTIVE_THEME: ThemeName = 'stadium';</pre>
+  <div class="themes">
+    <div class="theme">
+      <div class="sw"><span style="background:#000000"></span><span style="background:#FF2A2A"></span><span style="background:#FFE600"></span><span style="background:#CCFF00"></span></div>
+      <h3>Tactical</h3>
+      <p>defence, aviation, hardware</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#05070F"></span><span style="background:#FF3B6B"></span><span style="background:#8AB4FF"></span><span style="background:#00D1FF"></span></div>
+      <h3>Midnight</h3>
+      <p>night tech, AI, software</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#0B1B33"></span><span style="background:#E4322B"></span><span style="background:#FF8A00"></span><span style="background:#F7F3E8"></span></div>
+      <h3>Stadium</h3>
+      <p>sports, baseball, recaps</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#0A0604"></span><span style="background:#FF2D00"></span><span style="background:#FFB300"></span><span style="background:#FF6B00"></span></div>
+      <h3>Inferno</h3>
+      <p>motorsport, action, hype</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#121212"></span><span style="background:#FF0090"></span><span style="background:#D7FF3E"></span><span style="background:#A6FF00"></span></div>
+      <h3>Acid Lab</h3>
+      <p>science, biotech, data</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#000000"></span><span style="background:#FFFFFF"></span><span style="background:#FFE600"></span><span style="background:#FFFFFF"></span></div>
+      <h3>Mono</h3>
+      <p>editorial, essays, minimal</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#140B1F"></span><span style="background:#C2185B"></span><span style="background:#E8C56B"></span><span style="background:#D4AF37"></span></div>
+      <h3>Royal</h3>
+      <p>history, luxury, docs</p>
+    </div>
+    <div class="theme">
+      <div class="sw"><span style="background:#0E1A24"></span><span style="background:#FF4D4D"></span><span style="background:#7FE3FF"></span><span style="background:#0057FF"></span></div>
+      <h3>Arctic</h3>
+      <p>winter, travel, product</p>
+    </div>
   </div>
 
   <h2 class="sec">Pipeline</h2>

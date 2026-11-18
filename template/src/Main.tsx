@@ -5,7 +5,7 @@ import {Subtitles} from './components/Subtitles';
 import {LogoBug} from './components/LogoBug';
 import {Chrome} from './components/Chrome';
 import {Grain} from './components/Fx';
-import {C} from './theme';
+import {C, GRAIN} from './theme';
 
 /**
  * Scene boundaries, in frames at 60 fps, taken from the voiceover word timestamps.
@@ -30,7 +30,7 @@ export const Main: React.FC = () => (
     </Sequence>
 
     {/* global layers: grain, broadcast chrome, subtitles, logo */}
-    <Grain opacity={0.06} />
+    <Grain opacity={GRAIN} />
     <Sequence from={0} durationInFrames={TOTAL_FRAMES} layout="none">
       <Chrome />
       <Subtitles />

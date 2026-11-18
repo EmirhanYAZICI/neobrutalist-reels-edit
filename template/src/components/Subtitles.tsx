@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {C, FONT_DISPLAY} from '../theme';
+import {C, FONT_DISPLAY, SUBTITLE_ACCENT} from '../theme';
 import {SUBS} from '../data/subtitles';
 
 /** Words that get the tactical yellow accent, like the reference channel's style. */
@@ -61,7 +61,7 @@ export const Subtitles: React.FC<{y?: number}> = ({y = 1340}) => {
               fontWeight: 900,
               fontSize,
               lineHeight: 1.1,
-              color: isAccent(w) ? C.yellow : C.white,
+              color: isAccent(w) ? SUBTITLE_ACCENT : C.white,
               WebkitTextStroke: `2.5px ${C.black}`,
               paintOrder: 'stroke fill',
               textShadow: `4px 4px 0px ${C.black}`,

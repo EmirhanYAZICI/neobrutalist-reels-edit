@@ -44,6 +44,30 @@ are banned.
   (`İ` vs `I`), accent words in yellow, spring pop-in.
 - **`Chrome`** - broadcast chrome: corner ticks, hairlines, slate tag, running timecode.
 
+## Themes
+
+Eight presets ship with the template. Switch one line in `src/config.ts` and the whole edit
+restyles - colours, border weight, shadow depth, grain, texture, chrome and subtitle accent:
+
+```ts
+export const ACTIVE_THEME: ThemeName = 'stadium';
+```
+
+| Theme | Use it for | Signature |
+|---|---|---|
+| `tactical` | defence, aviation, hardware | black + concrete, signal red, acid green |
+| `midnight` | night tech, AI, software, finance | deep navy, ice blue, electric cyan |
+| `stadium` | sports, baseball, match recaps | navy + cream, signal orange, pinstripes |
+| `inferno` | motorsport, action, hype | black, ember orange, hot red, halftone |
+| `acidlab` | science, biotech, data | bone white, acid green, magenta |
+| `mono` | editorial, essays, minimal | pure black and white, one yellow accent |
+| `royal` | history, luxury, documentary | deep plum, gold, bone |
+| `arctic` | winter, travel, clean product | ice white, cobalt, glacier blue |
+
+Scenes never hardcode a colour: components read the seven theme slots (`ink`, `surface`,
+`text`, `danger`, `warn`, `primary`, `info`), so a scene written for one theme renders in all
+eight. Add your own by appending to `src/themes.ts`.
+
 ## Install
 
 ```bash

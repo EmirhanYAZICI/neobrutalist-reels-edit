@@ -82,7 +82,8 @@ fail mid-way and leave the previous file in place, so always check the output's 
 
 ## Design system
 
-Tactical Neobrutalism, enforced by `template/src/theme.ts`:
+Tactical Neobrutalism is the default of eight themes (see below), enforced by
+`template/src/theme.ts` + `template/src/themes.ts`:
 
 - Colors: black `#000000`, concrete `#F4F4F0`, signal red `#FF2A2A`, warning yellow `#FFE600`,
   acid green `#CCFF00`, high-voltage blue `#00E5FF`.
@@ -91,6 +92,30 @@ Tactical Neobrutalism, enforced by `template/src/theme.ts`:
 - Motion: `spring()` with high stiffness and controlled damping; never linear fades.
   Cross-dissolves are banned.
 - Texture: 5-8% film grain, micro grid behind cards, vignette.
+
+## Themes
+
+Eight presets ship with the template. Switch one line in `src/config.ts` and the whole edit
+restyles - colours, border weight, shadow depth, grain, texture, chrome and subtitle accent:
+
+```ts
+export const ACTIVE_THEME: ThemeName = 'stadium';
+```
+
+| Theme | Use it for | Signature |
+|---|---|---|
+| `tactical` | defence, aviation, hardware | black + concrete, signal red, acid green |
+| `midnight` | night tech, AI, software, finance | deep navy, ice blue, electric cyan |
+| `stadium` | sports, baseball, match recaps | navy + cream, signal orange, pinstripes |
+| `inferno` | motorsport, action, hype | black, ember orange, hot red, halftone |
+| `acidlab` | science, biotech, data | bone white, acid green, magenta |
+| `mono` | editorial, essays, minimal | pure black and white, one yellow accent |
+| `royal` | history, luxury, documentary | deep plum, gold, bone |
+| `arctic` | winter, travel, clean product | ice white, cobalt, glacier blue |
+
+Scenes never hardcode a colour: components read the seven theme slots (`ink`, `surface`,
+`text`, `danger`, `warn`, `primary`, `info`), so a scene written for one theme renders in all
+eight. Add your own by appending to `src/themes.ts`.
 
 ## Component library (`template/src/components/`)
 

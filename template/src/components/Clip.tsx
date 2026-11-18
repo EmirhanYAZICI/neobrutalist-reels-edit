@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, OffthreadVideo, staticFile, useCurrentFrame, interpolate} from 'remotion';
-import {C} from '../theme';
+import {BACKDROP_BRIGHTNESS, C, T} from '../theme';
 
 export type ClipProps = {
   src: string;
@@ -44,7 +44,7 @@ export const Clip: React.FC<ClipProps> = ({
   winTop = 600,
   fullBleed = false,
   backdrop = true,
-  border = 8,
+  border = T.borderWidth + 2,
   style,
 }) => {
   const frame = useCurrentFrame();
@@ -85,7 +85,7 @@ export const Clip: React.FC<ClipProps> = ({
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'blur(36px) brightness(0.58) saturate(1.25) contrast(1.02)',
+            filter: `blur(36px) brightness(${BACKDROP_BRIGHTNESS}) saturate(1.25) contrast(1.02)`,
           }}
         />
       </AbsoluteFill> : null}
@@ -99,7 +99,7 @@ export const Clip: React.FC<ClipProps> = ({
           width: winWidth,
           height: winH,
           border: `${border}px solid ${C.black}`,
-          boxShadow: `14px 14px 0px ${C.black}`,
+          boxShadow: `${T.shadow + 4}px ${T.shadow + 4}px 0px ${C.black}`,
           overflow: 'hidden',
           backgroundColor: C.black,
         }}

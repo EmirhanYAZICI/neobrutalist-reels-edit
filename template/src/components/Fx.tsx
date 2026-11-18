@@ -1,9 +1,9 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, random, useCurrentFrame} from 'remotion';
-import {C} from '../theme';
+import {C, GRAIN, TEXTURE} from '../theme';
 
 /** Film grain + micro grid + vignette, laid over the whole video. */
-export const Grain: React.FC<{opacity?: number}> = ({opacity = 0.07}) => {
+export const Grain: React.FC<{opacity?: number}> = ({opacity = GRAIN}) => {
   const frame = useCurrentFrame();
   const seed = Math.floor(frame / 2);
   return (
@@ -24,20 +24,29 @@ export const Grain: React.FC<{opacity?: number}> = ({opacity = 0.07}) => {
   );
 };
 
-/** Blueprint micro-grid, used as texture behind brutalist cards. */
-export const GridTexture: React.FC<{color?: string; size?: number; opacity?: number}> = ({
+/** Theme texture behind cards and collage backgrounds: grid, halftone, pinstripe or none. */
+export const GridTexture: React.FC<{color?: string; size?: number; opacity?: number; kind?: string}> = ({
   color = '#000',
   size = 22,
   opacity = 0.12,
-}) => (
-  <AbsoluteFill
-    style={{
-      opacity,
+  kind = TEXTURE,
+}) => {
+  if (kind === 'none') return null;
+  const backgrounds: Record<string, React.CSSProperties> = {
+    grid: {
       backgroundImage: `linear-gradient(${color} 1px, transparent 1px), linear-gradient(90deg, ${color} 1px, transparent 1px)`,
       backgroundSize: `${size}px ${size}px`,
-    }}
-  />
-);
+    },
+    halftone: {
+      backgroundImage: `radial-gradient(${color} 22%, transparent 23%)`,
+      backgroundSize: `${size}px ${size}px`,
+    },
+    pinstripe: {
+      backgroundImage: `repeating-linear-gradient(90deg, ${color} 0 2px, transparent 2px ${size}px)`,
+    },
+  };
+  return <AbsoluteFill style={{opacity, ...(backgrounds[kind] ?? backgrounds.grid)}} />;
+};
 
 /** 1-3 frame high contrast / inverted impact frame. */
 export const ImpactFrame: React.FC<{at: number; frames?: number; invert?: boolean}> = ({
