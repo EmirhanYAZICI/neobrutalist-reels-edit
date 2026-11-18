@@ -1,0 +1,10 @@
+node_modules/
+out/
+build/
+public/clips/
+public/*.mp3
+public/*.mp4
+public/logo.png
+sfx/
+*.log
+.DS_Store

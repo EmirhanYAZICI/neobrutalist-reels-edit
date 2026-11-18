@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" width="960" height="220" role="img" aria-label="Tactical Neobrutalism palette">
+  <rect width="960" height="220" fill="#0b0b0b"/>
+  <g font-family="Arial Black, Impact, sans-serif" font-size="24">
+    <g transform="translate(40,38)">
+      <rect width="180" height="92" fill="#FF2A2A" stroke="#000" stroke-width="6"/>
+      <text x="16" y="52" fill="#000">SIGNAL</text>
+      <text x="16" y="80" fill="#000" font-size="17" font-family="Consolas, monospace">#FF2A2A</text>
+    </g>
+    <g transform="translate(250,38)">
+      <rect width="180" height="92" fill="#FFE600" stroke="#000" stroke-width="6"/>
+      <text x="16" y="52" fill="#000">WARNING</text>
+      <text x="16" y="80" fill="#000" font-size="17" font-family="Consolas, monospace">#FFE600</text>
+    </g>
+    <g transform="translate(460,38)">
+      <rect width="180" height="92" fill="#CCFF00" stroke="#000" stroke-width="6"/>
+      <text x="16" y="52" fill="#000">ACID</text>
+      <text x="16" y="80" fill="#000" font-size="17" font-family="Consolas, monospace">#CCFF00</text>
+    </g>
+    <g transform="translate(670,38)">
+      <rect width="180" height="92" fill="#00E5FF" stroke="#000" stroke-width="6"/>
+      <text x="16" y="52" fill="#000">VOLT</text>
+      <text x="16" y="80" fill="#000" font-size="17" font-family="Consolas, monospace">#00E5FF</text>
+    </g>
+    <g transform="translate(40,152)">
+      <rect width="810" height="44" fill="#F4F4F0" stroke="#000" stroke-width="6"/>
+      <text x="16" y="31" fill="#000" font-size="19" font-family="Consolas, monospace">0 PX RADIUS // 6-8 PX BORDERS // HARD SHADOWS, ZERO BLUR // SPRING PHYSICS</text>
+    </g>
+  </g>
+</svg>
