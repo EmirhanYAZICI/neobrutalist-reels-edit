@@ -9,3 +9,9 @@ import type {ThemeName} from './themes';
  * active theme, so one line restyles the entire video.
  */
 export const ACTIVE_THEME: ThemeName = 'tactical';
+
+/** Slate tag drawn top-left by Chrome.tsx. Set it to the subject of the video. */
+export const SLATE_TAG = 'YOUR SUBJECT HERE';
+
+/** Small label under the bottom hairline. Set it to your channel or topic line. */
+export const FOOTER_TAG = 'YOUR CHANNEL // TOPIC';

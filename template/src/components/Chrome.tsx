@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {C, CHROME, FONT_MONO} from '../theme';
+import {FOOTER_TAG, SLATE_TAG} from '../config';
 
 const L = 24;      // left rail
 const R = 1056;    // right rail
@@ -72,7 +73,7 @@ export const Chrome: React.FC = () => {
           color: CHROME,
         }}
       >
-        SKYDAGGER × EJDERHA
+        {SLATE_TAG}
       </div>
 
       <div
@@ -105,7 +106,7 @@ export const Chrome: React.FC = () => {
           opacity: 0.6,
         }}
       >
-        TR // SAVUNMA SANAYİİ
+        {FOOTER_TAG}
       </div>
     </AbsoluteFill>
   );

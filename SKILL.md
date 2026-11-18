@@ -100,6 +100,8 @@ restyles - colours, border weight, shadow depth, grain, texture, chrome and subt
 
 ```ts
 export const ACTIVE_THEME: ThemeName = 'stadium';
+export const SLATE_TAG = 'NY YANKEES // 2026';   // top-left broadcast tag
+export const FOOTER_TAG = 'SPORTS // RECAP';      // small label under the bottom rail
 ```
 
 | Theme | Use it for | Signature |
